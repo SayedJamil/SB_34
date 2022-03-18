@@ -1,0 +1,184 @@
+.leftHexagonIcon {
+  position: fixed;
+  height: 50%;
+  left: 11%;
+  top: 15%;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.rightHexagonIcon {
+  position: fixed;
+  height: 50%;
+  left: 60%;
+  top: 15%;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.centerHexagonIcon {
+  position: fixed;
+  height: 50%;
+  left: 35.55%;
+  top: 45%;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.jugIcon {
+  position: fixed;
+  height: 30%;
+  left: 43.55%;
+  top: 10%;
+}
+
+.highlighterAnim {
+  animation: myAnim 1s linear 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  55% {
+    animation-timing-function: ease-in;
+    transform: scale(0.7);
+  }
+
+  72% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  81% {
+    animation-timing-function: ease-in;
+    transform: scale(0.84);
+  }
+
+  89% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  95% {
+    animation-timing-function: ease-in;
+    transform: scale(0.95);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
+
+/* Acitivity End 01 */
+
+.activity01endLady {
+  height: 90%;
+  position: fixed;
+  z-index: 2;
+  top: 12%;
+  left: 10%;
+}
+
+.activity01endJug {
+  height: 35%;
+  position: fixed;
+  z-index: 2;
+  top: 29%;
+  left: 62%;
+}
+
+.leftSquareIcon {
+  position: fixed;
+  height: 65%;
+  left: 15%;
+  top: 10%;
+  z-index: 5;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.rightSquareIcon {
+  position: fixed;
+  height: 65%;
+  left: 53.55%;
+  z-index: 5;
+  top: 10%;
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.squareJugIcon {
+  position: fixed;
+  height: 30%;
+  left: 43.55%;
+  z-index: 6;
+  top: 63%;
+}
+.circleSquareIcon {
+  position: fixed;
+  height: 45%;
+  left: 40%;
+  top: 55%;
+  z-index: 6;
+}
+
+/* Activity end 02 */
+
+.activity02endLady {
+  height: 85%;
+  position: fixed;
+  z-index: 2;
+  top: 15.5%;
+  left: 15%;
+}
+
+.activity02endJug {
+  height: 35%;
+  position: fixed;
+  z-index: 2;
+  top: 29%;
+  left: 62%;
+}
+.activity02endJug2 {
+  height: 35%;
+  position: fixed;
+  z-index: 2;
+  top: 35%;
+  left: 74%;
+}
+
+.next_btn {
+  position: fixed;
+  height: 15%;
+  z-index: 1;
+  left: 90%;
+  top: 81%;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

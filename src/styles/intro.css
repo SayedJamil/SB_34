@@ -1,0 +1,81 @@
+.introScreen {
+  display: flex;
+  justify-content: center;
+}
+.introTitle {
+  height: 35%;
+  position: fixed;
+  z-index: 1;
+  top: 35%;
+  left: 30%;
+}
+.introTitleBG {
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 5%;
+}
+.play_btn {
+  position: fixed;
+  height: 20%;
+  z-index: 1;
+  left: 47%;
+  top: 69%;
+  cursor: pointer;
+}
+
+.replay_btn {
+  position: fixed;
+  height: 20%;
+  z-index: 1;
+  left: 45%;
+  top: 78%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.wellDoneAnim {
+  height: 90%;
+  position: fixed;
+  z-index: 2;
+  top: 0%;
+  left: 10%;
+}
+
+.saveWaterEndLady {
+  height: 90%;
+  position: fixed;
+  z-index: 2;
+  top: 10%;
+  left: 20%;
+}
+
+.disappearButton {
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
