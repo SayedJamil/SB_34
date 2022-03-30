@@ -1,7 +1,8 @@
 .leftHexagonIcon {
   position: fixed;
   height: 50%;
-  left: 11%;
+  width: 28%;
+  left: 8%;
   top: 15%;
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
@@ -9,16 +10,18 @@
 .rightHexagonIcon {
   position: fixed;
   height: 50%;
-  left: 60%;
+  width: 28%;
+  left: 63%;
   top: 15%;
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .centerHexagonIcon {
   position: fixed;
+  width: 28%;
   height: 50%;
   left: 35.55%;
-  top: 45%;
+  top: 48%;
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
@@ -161,10 +164,6 @@
   top: 81%;
 }
 
-.cursorPointer {
-  cursor: pointer;
-}
-
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -181,4 +180,63 @@
     opacity: 1;
   }
 }
+.clickAbleDots div:nth-child(1) {
+  height: 200px;
+  width: 200px;
+  color: aqua;
+  display: block;
+  z-index: 100;
+  position: fixed;
+  height: 46.5%;
+  width: 13.5%;
+  border-radius: 10px;
+}
+.clickAbleDots div:nth-child(2) {
+  height: 200px;
+  width: 200px;
+  color: aqua;
+  display: block;
+  z-index: 100;
+  position: fixed;
+  height: 46.5%;
+  width: 13.5%;
+  transform: rot(91deg);
+  transform: rotate(60deg);
+  border-radius: 10px;
+}
+.clickAbleDots div:nth-child(3) {
+  height: 200px;
+  width: 200px;
+  color: aqua;
+  display: block;
+  z-index: 100;
+  position: fixed;
+  height: 46.5%;
+  width: 13.5%;
+  transform: rot(181deg);
+  transform: rotate(300deg);
+  border-radius: 10px;
+}
 
+.clickAbleDotsLeft {
+  left: 15.25%;
+  top: 16.76%;
+  position: fixed;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.clickAbleDotsRight {
+  left: 70.25%;
+  top: 16.76%;
+  position: fixed;
+  cursor: pointer;
+  z-index: 100;
+}
+.clickAbleDotsCenter {
+  left: 42.8%;
+  top: 49.76%;
+  position: fixed;
+  cursor: pointer;
+  z-index: 100;
+}

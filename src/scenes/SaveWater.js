@@ -11,14 +11,12 @@ function SaveWater() {
   const { setSceneId, Assets, setisLoading, iteration, setIteration, isLoading, bubbleNum, setBubbleNum, disableIcon, setDisableIcon, setEnableActivity02 } = useContext(SceneContext);
   const { savewaterscene } = Assets;
   var audioNum = String(bubbleNum)
-  console.log(audioNum)
   const sound = new Howl({
     src: [`ee02_ow_tvhd_pl1/audio/usesaudio/sb_34_audio_${audioNum}.mp3`],
     autoplay: false,
   });
   const [playSound, setPlaySound] = useState(sound)
   const [iconsSetNum, setIconsSetNum] = useState(12)
-  console.log(audioNum)
   useEffect(() => {
     if (!isLoading) {
       playSound.play()

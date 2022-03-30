@@ -42,7 +42,6 @@ function App() {
     })
     setBG_sound(bg_sound)
   }
-  console.log(BG_sound)
   const loadLottie = async () => {
     const data = await LoadJson(`ee02_ow_tvhd_pl1/lottie/water_filling_animation.json`);
     setTransition(data);

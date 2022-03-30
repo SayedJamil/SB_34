@@ -40,7 +40,6 @@ function Activity02Temp() {
         }
         playSound.on('end', () => {
             setEnablePointer(true)
-            console.log('Click now')
             setTimeout(() => {
                 playSound.play()
             }, 10000)
@@ -56,8 +55,6 @@ function Activity02Temp() {
                 playSound.mute()
             }, 2000)
         })
-        console.log('Number of items in the array', act02array.length)
-        console.log('Current bubble number', bubbleNum)
     }, [isLoading])
 
     const randomize = () => {
@@ -66,9 +63,7 @@ function Activity02Temp() {
             randomize()
         } else {
             var findNum = act02array.find(elem => elem == randomNumber);
-            console.log(findNum)
             if (findNum == null) {
-                console.log(randomNumber)
                 setIconNum(randomNumber)
                 setBubbleNum(randomNumber)
                 if (randomNumber == 0) {
@@ -81,13 +76,11 @@ function Activity02Temp() {
                     setCorrectOptionSide('Right')
                 }
                 setAct02Array([...act02array, randomNumber]);
-                console.log("Currently in the array", act02array)
             } else {
                 randomize()
             }
         }
     }
-    console.log(iteration)
     const handleButtonClick = (sideClicked) => {
         if (click) {
             if (correctOptionSide === 'Left' && sideClicked === 'Left') {

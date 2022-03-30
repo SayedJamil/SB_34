@@ -21,7 +21,6 @@ function Intro() {
         var changeClass = document.querySelector('.music_button')
         changeClass.style.display = 'none'
     }, [])
-    console.log(BG_sound)
     const handleIntroButton = () => {
         BG_sound?.play()
         setButtonPressed(true)

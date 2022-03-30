@@ -11,7 +11,6 @@ function WaterUses() {
     const { setSceneId, Assets, setisLoading, iteration, setIteration, isLoading, bubbleNum, setBubbleNum, disableIcon, setDisableIcon, setEnableActivity02, act01array } = useContext(SceneContext);
     const { waterusescene } = Assets;
     var audioNum = String(bubbleNum)
-    console.log(audioNum)
     const sound = new Howl({
         src: [`ee02_ow_tvhd_pl1/audio/usesaudio/sb_34_audio_${audioNum}.mp3`],
         autoplay: false,

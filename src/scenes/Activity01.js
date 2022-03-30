@@ -21,12 +21,14 @@ function Activity01() {
     const [wrongHL02, setwrongHL02] = useState(false)
     const [click, setClick] = useState(true)
     const [enablePointer, setEnablePointer] = useState(true)
+    const [rightSide, setRightSide] = useState('')
+    const [wrongSide, setWrongSide] = useState('')
     const sound = new Howl({
         src: [`ee02_ow_tvhd_pl1/audio/sb_34_audio_05.mp3`],
         autoplay: false,
     });
+    var stringImage = activitytype01?.sprites[hNw01]
     const [playSound, setPlaySound] = useState(sound)
-    console.log(iteration)
     useEffect(() => {
         if (!isLoading) {
             playSound.play()
@@ -55,6 +57,7 @@ function Activity01() {
     }, [isLoading])
     useEffect(() => {
         randomize()
+
     }, [])
     useEffect(() => {
         if (iteration > 5) {
@@ -76,20 +79,14 @@ function Activity01() {
         setCL1(random1)
         setCL2(random2)
         setCL3(random3)
+
         var random4 = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
-        console.log(random4)
-        console.log(act01array)
         var findNum = act01array.find(elem => elem == random4)
         if (findNum == null) {
             setAct01Array([...act01array, random4]);
             sethW(random4)
         } else { randomize() }
-        // while (random4 === usedIcon) {
-        //     console.log(random4)
-        //     random4 = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
-        // }
-        // console.log(random4)
-        // setUsedIcon(random4)
+
 
         var random5 = Math.floor(Math.random() * (19 - 10 + 1)) + 10;
         var random6 = Math.floor(Math.random() * (19 - 10 + 1)) + 10;
@@ -98,7 +95,12 @@ function Activity01() {
         }
         sethNw01(random5)
         sethNw02(random6)
+
     }
+    useEffect(() => {
+        setRightSide(cl1)
+        console.log(rightSide)
+    }, [cl1])
     const rightAnswerClicked = () => {
         playSound.unload()
         navigator.vibrate(100);
@@ -153,58 +155,82 @@ function Activity01() {
             setClick(true)
         })
     }
+    console.log(rightSide)
+    const handleAnswer = (value) => {
+        console.log(value)
+        if (value === cl1) {
+            setCorrectHL(true)
+            rightAnswerClicked()
+        }
+        else {
+            if (value === cl2) {
+                setwrongHL01(true)
+                wrongAnswerClicked()
+            } else if (value === cl3) {
+                setwrongHL02(true)
+                wrongAnswerClicked()
+            }
 
+        }
+    }
     return (
         <Scenes
             Bg={Bg}
             sprites={
                 <div className='activitytype01Screen'>
-                    <Image src={activitytype01?.sprites[hW]} alt="" className={`${cl1} ${(enablePointer) ? 'cursorPointer' : ''}`}
-                        onClick={() => {
-                            if (click) {
-                                setCorrectHL(true)
-                                rightAnswerClicked()
 
-                            }
-                        }} />
+                    <Image src={activitytype01?.sprites[hW]} alt="" className={`${cl1} ${(enablePointer) ? 'cursorPointer' : ''}`} />
                     {(correctHL) ? <Image src={activitytype01?.sprites[20]} alt="" className={`highlighterAnim ${cl1} `} /> : null}
 
-                    <Image src={activitytype01?.sprites[hNw01]} alt="" className={`${cl2} ${(enablePointer) ? 'cursorPointer' : ''}`} onClick={() => {
-                        if (click) {
-                            setwrongHL01(true)
-                            wrongAnswerClicked()
-                        }
-                    }}
+                    <Image src={activitytype01?.sprites[hNw01]} alt="" className={`${cl2} ${(enablePointer) ? 'cursorPointer' : ''}`}
                     />
                     {(wrongHL01) ? <Image src={activitytype01?.sprites[21]} alt="" className={`highlighterAnim ${cl2}`} /> : null}
-
-                    <Image src={activitytype01?.sprites[hNw02]} alt="" className={`${cl3} ${(enablePointer) ? 'cursorPointer' : ''}`} onClick={() => {
+                    <div className='clickAbleDots clickAbleDotsLeft' onClick={() => { if (click) { handleAnswer("leftHexagonIcon") } }}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div className='clickAbleDots clickAbleDotsRight' onClick={() => {
                         if (click) {
-                            setwrongHL02(true)
-                            wrongAnswerClicked()
+                            handleAnswer('rightHexagonIcon')
                         }
-                    }} />
+                    }
+                    }
+                    >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div className='clickAbleDots clickAbleDotsCenter' onClick={() => { if (click) { handleAnswer('centerHexagonIcon') } }}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <Image src={activitytype01?.sprites[hNw02]} alt="" className={`${cl3} ${(enablePointer) ? 'cursorPointer' : ''}`}
+                    />
                     {(wrongHL02) ? <Image src={activitytype01?.sprites[21]} alt="" className={`highlighterAnim ${cl3}`} /> : null}
-                    {(() => {
-                        switch (jugNum) {
-                            case 1:
-                                return <Image src={activitytype01?.sprites[22]} alt="" className="jugIcon" />
-                            case 2:
-                                return <Image src={activitytype01?.sprites[23]} alt="" className="jugIcon" />
-                            case 3:
-                                return <Image src={activitytype01?.sprites[24]} alt="" className="jugIcon" />
-                            case 4:
-                                return <Image src={activitytype01?.sprites[25]} alt="" className="jugIcon" />
-                            case 5:
-                                return <Image src={activitytype01?.sprites[26]} alt="" className="jugIcon" />
-                            case 6:
-                                return <Image src={activitytype01?.sprites[27]} alt="" className="jugIcon" />
-                            default:
-                                return null
-                        }
-                    })()}
+                    {
+                        (() => {
+                            switch (jugNum) {
+                                case 1:
+                                    return <Image src={activitytype01?.sprites[22]} alt="" className="jugIcon" />
+                                case 2:
+                                    return <Image src={activitytype01?.sprites[23]} alt="" className="jugIcon" />
+                                case 3:
+                                    return <Image src={activitytype01?.sprites[24]} alt="" className="jugIcon" />
+                                case 4:
+                                    return <Image src={activitytype01?.sprites[25]} alt="" className="jugIcon" />
+                                case 5:
+                                    return <Image src={activitytype01?.sprites[26]} alt="" className="jugIcon" />
+                                case 6:
+                                    return <Image src={activitytype01?.sprites[27]} alt="" className="jugIcon" />
+                                default:
+                                    return null
+                            }
+                        })()
+                    }
 
-                </div>
+                </div >
             }
         />
 
