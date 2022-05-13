@@ -24,8 +24,8 @@ function App() {
   const [noSoundButton, setNoSoundButton] = useState(null);
   const [Load, setLoad] = useState(true);
   const [mute, setmute] = useState(false);
-
-  const { setTransition, BG_sound, setBG_sound } = useContext(SceneContext);
+  const { setTransition, BG_sound, setBG_sound, height, setheight, Ipad, setIpad, LandScape, setLandScape
+  } = useContext(SceneContext);
 
   const loadBgImage = async () => {
     const unmute = await LoadImage(`ee02_ow_tvhd_pl1/button/buttons_20.svg`);
@@ -70,13 +70,30 @@ function App() {
     loadBgImage()
     loadAudio()
     loadLottie()
+    window.addEventListener("resize", resizer)
+    setIpad(window.innerWidth / window.innerHeight >= 1.3 && window.innerWidth / window.innerHeight <= 1.44)
+    return () => {
+      window.removeEventListener("resize", resizer)
+    }
   }, []);
-
+  const resizer = () => {
+    if (window.innerWidth <= 1264) {
+      setheight("87%")
+    } else {
+      setheight("73%")
+    }
+    setLandScape(window.innerWidth / window.innerHeight < 1.0)
+  }
   if (Load) return (
-    <div class="circle">
-      <div class="wave"></div>
+    <div className="loadingIndicator">
+      <div className="vendorWrapper"></div>
+      <div className="playerPreloader">
+        <div className="playerPreloadCircle"></div>
+      </div>
     </div>
   )
+
+
 
   const toggleMute = () => {
     setmute(!mute)
@@ -84,57 +101,65 @@ function App() {
   }
   navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
   return (
-    <GameContainer>
-      {
-        mute
-          ?
-          <Image src={noSoundButton} alt="" className="music_button" onClick={toggleMute} />
-          :
-          <Image src={soundButton} alt="" className="music_button" onClick={toggleMute} />
-      }
-      <Router sceneId="/">
-        <Intro />
-      </Router>
-      <Router sceneId="/explain">
-        <Explain />
-      </Router>
-      <Router sceneId="/activity011">
-        <Activity01 />
-      </Router>
-      <Router sceneId="/activity012">
-        <Activity01 />
-      </Router>
-      <Router sceneId="/activity01end">
-        <Activity01End />
-      </Router>
-      <Router sceneId="/activity02end">
-        <Activity02End />
-      </Router>
-      <Router sceneId="/wateruses01">
-        <WaterUses />
-      </Router>
-      <Router sceneId="/wateruses02">
-        <WaterUses />
-      </Router>
-      <Router sceneId="/activity021">
-        <Activity02 />
-      </Router>
-      <Router sceneId="/activity022">
-        <Activity02 />
-      </Router>
-      <Router sceneId="/savewater01">
-        <SaveWater />
-      </Router>
-      <Router sceneId="/savewater02">
-        <SaveWater />
-      </Router>
-      <Router sceneId="/savewaterend">
-        <SaveWaterEnd />
-      </Router>
-      <Router sceneId="/end">
-        <End />
-      </Router>
-    </GameContainer>
+    <>
+      <h1 style={{ display: LandScape ? "" : "none" }} id="landscapeMode">Rotate your device</h1>
+
+      <div style={{ opacity: LandScape ? 0 : 1 }}>
+        <GameContainer>
+          {
+            mute
+              ?
+              <Image src={noSoundButton} alt="" className="music_button" onClick={toggleMute} />
+              :
+              <Image src={soundButton} alt="" className="music_button" onClick={toggleMute} />
+          }
+          <Router sceneId="/">
+            <Intro />
+          </Router>
+          <Router sceneId="/explain">
+            <Explain />
+          </Router>
+          <Router sceneId="/activity011">
+            <Activity01 />
+          </Router>
+          <Router sceneId="/activity012">
+            <Activity01 />
+          </Router>
+          <Router sceneId="/activity01end">
+            <Activity01End />
+          </Router>
+          <Router sceneId="/activity02end">
+            <Activity02End />
+          </Router>
+          <Router sceneId="/wateruses01">
+            <WaterUses />
+          </Router>
+          <Router sceneId="/wateruses02">
+            <WaterUses />
+          </Router>
+          <Router sceneId="/activity021">
+            <Activity02 />
+          </Router>
+          <Router sceneId="/activity022">
+            <Activity02 />
+          </Router>
+          <Router sceneId="/savewater01">
+            <SaveWater />
+          </Router>
+          <Router sceneId="/savewater02">
+            <SaveWater />
+          </Router>
+          <Router sceneId="/savewaterend">
+            <SaveWaterEnd />
+          </Router>
+          <Router sceneId="/end">
+            <End />
+          </Router>
+        </GameContainer>
+      </div>
+    </>
+
+
   );
 }
 

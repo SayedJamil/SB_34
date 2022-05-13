@@ -1,35 +1,35 @@
 .leftHexagonIcon {
   position: fixed;
-  height: 50%;
+  height: 37%;
   width: 28%;
-  left: 8%;
-  top: 15%;
+  left: 18%;
+  top: 40%;
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .rightHexagonIcon {
   position: fixed;
-  height: 50%;
+  height: 37%;
   width: 28%;
-  left: 63%;
-  top: 15%;
+  left: 55.8%;
+  top: 40%;
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .centerHexagonIcon {
   position: fixed;
   width: 28%;
-  height: 50%;
-  left: 35.55%;
-  top: 48%;
+  height: 37%;
+  left: 37%;
+  top: 60%;
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .jugIcon {
   position: fixed;
-  height: 30%;
-  left: 43.55%;
-  top: 10%;
+  height: 27%;
+  left: 45%;
+  top: 30%;
 }
 
 .highlighterAnim {
@@ -83,85 +83,77 @@
 /* Acitivity End 01 */
 
 .activity01endLady {
-  height: 90%;
+  height: 70%;
   position: fixed;
   z-index: 2;
-  top: 12%;
-  left: 10%;
+  bottom: 0%;
+  left: 20%;
 }
 
 .activity01endJug {
-  height: 35%;
+  height: 28%;
   position: fixed;
   z-index: 2;
-  top: 29%;
+  top: 45%;
   left: 62%;
 }
 
 .leftSquareIcon {
   position: fixed;
-  height: 65%;
-  left: 15%;
-  top: 10%;
+  height: 45%;
+  left: 25%;
+  top: 25%;
   z-index: 5;
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .rightSquareIcon {
   position: fixed;
-  height: 65%;
+  height: 45%;
   left: 53.55%;
   z-index: 5;
-  top: 10%;
+  top: 25%;
   -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .squareJugIcon {
   position: fixed;
-  height: 30%;
-  left: 43.55%;
+  height: 20%;
+  left: 45.55%;
   z-index: 6;
-  top: 63%;
+  top: 68%;
 }
 .circleSquareIcon {
   position: fixed;
-  height: 45%;
-  left: 40%;
-  top: 55%;
+  height: 35%;
+  left: 42.1%;
+  top: 60%;
   z-index: 6;
 }
 
 /* Activity end 02 */
 
 .activity02endLady {
-  height: 85%;
+  height: 70%;
   position: fixed;
   z-index: 2;
-  top: 15.5%;
-  left: 15%;
+  bottom: 0%;
+  left: 20%;
 }
 
 .activity02endJug {
-  height: 35%;
+  height: 20%;
   position: fixed;
   z-index: 2;
-  top: 29%;
-  left: 62%;
+  top: 50%;
+  left: 60%;
 }
 .activity02endJug2 {
-  height: 35%;
+  height: 23%;
   position: fixed;
-  z-index: 2;
-  top: 35%;
-  left: 74%;
-}
-
-.next_btn {
-  position: fixed;
-  height: 15%;
   z-index: 1;
-  left: 90%;
-  top: 81%;
+  top: 40%;
+  left: 65%;
 }
 
 @-webkit-keyframes fade-in {
@@ -187,8 +179,8 @@
   display: block;
   z-index: 100;
   position: fixed;
-  height: 46.5%;
-  width: 13.5%;
+  height: 33.5%;
+  width: 9.5%;
   border-radius: 10px;
 }
 .clickAbleDots div:nth-child(2) {
@@ -198,8 +190,8 @@
   display: block;
   z-index: 100;
   position: fixed;
-  height: 46.5%;
-  width: 13.5%;
+  height: 33.5%;
+  width: 9.5%;
   transform: rot(91deg);
   transform: rotate(60deg);
   border-radius: 10px;
@@ -211,31 +203,36 @@
   display: block;
   z-index: 100;
   position: fixed;
-  height: 46.5%;
-  width: 13.5%;
+  height: 33.5%;
+  width: 9.5%;
   transform: rot(181deg);
   transform: rotate(300deg);
   border-radius: 10px;
 }
 
 .clickAbleDotsLeft {
-  left: 15.25%;
-  top: 16.76%;
+  left: 24.25%;
+  top: 40.76%;
   position: fixed;
   cursor: pointer;
   z-index: 10;
 }
 
 .clickAbleDotsRight {
-  left: 70.25%;
-  top: 16.76%;
+  left: 67.25%;
+  top: 40.76%;
   position: fixed;
   cursor: pointer;
   z-index: 10;
+  /* left: 70.25%;
+  top: 16.76%;
+  position: fixed;
+  cursor: pointer;
+  z-index: 10; */
 }
 .clickAbleDotsCenter {
-  left: 42.8%;
-  top: 49.76%;
+  left: 46%;
+  top: 60.76%;
   position: fixed;
   cursor: pointer;
   z-index: 10;

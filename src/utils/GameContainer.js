@@ -1,35 +1,40 @@
 import { useEffect, useState } from 'react';
-import '.././styles/app.css'
-export default function GameContainer({ children }) {
-  const ratio = 1600 / 768
-  const [width, setwidth] = useState(window.innerWidth);
-  const [height, setheight] = useState(width / ratio);
+import { SceneContext } from './../contexts/SceneContext';
+import { useContext } from 'react';
 
-  const onResize = () => {
-    setwidth(window.innerWidth)
-    setheight(window.innerWidth / ratio)
-  }
+export default function GameContainer({ children, LandScape, setLandScape }) {
+    const [scale, setscale] = useState(window.innerWidth * 0.67 / 1000);
+    const { Ipad } = useContext(SceneContext)
 
-  useEffect(() => {
-    window.addEventListener("resize", () => onResize())
+    useEffect(() => {
+        window.addEventListener("resize", onResize)
+        return () => {
+            window.removeEventListener("resize", onResize)
+        }
+    }, [])
 
-    return () => {
-      window.removeEventListener("resize", () => onResize())
+    const onResize = () => {
+        const scale = (window.innerWidth * 0.67 / 1000)
+        setscale(scale)
+
     }
-  }, [])// eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    if (height > window.innerHeight) {
-      setheight(window.innerHeight)
-      setwidth(window.innerHeight * ratio)
-    }
-  }, [height, ratio])
 
 
 
-  const styles = { height: `${height}px`, width: `${width}px`, position: "fixed", left: "50%", top: "50%", transform: "translate(-50%,-50%)" }
 
-  return <div className="GameContainer" style={styles}>
-    {children}
-  </div>;
+    return <div className="vendorWrapper">
+        <div className="playHold" style={{
+            position: "absolute",
+            width: "1920px",
+            height: "900px",
+            transformOrigin: "210px 900px",
+            left: "-210px",
+            bottom: "0px",
+            transform: `scale(${scale})`,
+            overflow: Ipad ? "" : "hidden"
+        }}>
+            {!LandScape && children}
+
+        </div>
+    </div>
 }

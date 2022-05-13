@@ -29,6 +29,9 @@ function Explain() {
             setisLoading(true)
             setSceneId('/activity011')
         })
+        playSound.on('play', () => {
+            lottie.play()
+        })
     }, [isLoading])
 
     useEffect(() => {
@@ -39,7 +42,7 @@ function Explain() {
                     container: Ref1.current,
                     renderer: "svg",
                     loop: true,
-                    autoplay: true,
+                    autoplay: false,
                     animationData: explain?.lottie[0],
                 })
             } catch (err) {

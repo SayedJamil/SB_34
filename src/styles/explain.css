@@ -1,16 +1,17 @@
 .explainLady {
-  height: 90%;
+  height: 70%;
   position: fixed;
   z-index: 2;
-  top: 10%;
+  bottom: 0%;
   left: 20%;
 }
 
 .next_btn {
   position: fixed;
-  height: 15%;
+  height: 10%;
   z-index: 1;
-  left: 90%;
-  top: 81%;
+  right: 12%;
+  bottom: 1%;
+  margin: auto;
   cursor: pointer;
 }

@@ -17,6 +17,9 @@ export default function SceneContextProvider({ children }) {
   const [enableActivity02, setEnableActivity02] = useState(false)
   const [act02array, setAct02Array] = useState([])
   const [act01array, setAct01Array] = useState([])
+  const [height, setheight] = useState("73%")
+  const [Ipad, setIpad] = useState(false)
+  const [LandScape, setLandScape] = useState(false)
   // loading part
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export default function SceneContextProvider({ children }) {
     setAct01Array([])
   }
   return (
-    <SceneContext.Provider value={{ SceneId, setSceneId, isLoading, setisLoading, Assets, setAssets, transition, setTransition, setIteration, iteration, jugNum, setJugNum, bubbleNum, setBubbleNum, disableIcon, setDisableIcon, enableActivity02, setEnableActivity02, act02array, setAct02Array, act01array, setAct01Array, BG_sound, setBG_sound }}>
+    <SceneContext.Provider value={{ LandScape, setLandScape, SceneId, setSceneId, isLoading, setisLoading, Assets, setAssets, transition, setTransition, setIteration, iteration, jugNum, setJugNum, bubbleNum, setBubbleNum, disableIcon, setDisableIcon, enableActivity02, setEnableActivity02, act02array, setAct02Array, act01array, setAct01Array, BG_sound, setBG_sound, height, setheight, Ipad, setIpad }}>
       {children}
     </SceneContext.Provider>
   )

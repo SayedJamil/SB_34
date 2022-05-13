@@ -3,50 +3,50 @@
   justify-content: center;
 }
 .introTitle {
-  height: 35%;
+  height: 28%;
   position: fixed;
   z-index: 1;
-  top: 35%;
-  left: 30%;
+  top: 45%;
+  left: 35%;
 }
 .introTitleBG {
-  height: 100%;
+  height: 82%;
   position: fixed;
-  top: 0%;
-  left: 5%;
+  top: 19%;
+  left: 15%;
 }
 .play_btn {
   position: fixed;
-  height: 20%;
+  height: 15%;
   z-index: 1;
   left: 47%;
-  top: 69%;
+  top: 75%;
   cursor: pointer;
 }
 
 .replay_btn {
   position: fixed;
-  height: 20%;
+  height: 15%;
   z-index: 1;
-  left: 45%;
+  left: 48%;
   top: 78%;
   z-index: 5;
   cursor: pointer;
 }
 
 .wellDoneAnim {
-  height: 90%;
+  height: 60%;
   position: fixed;
   z-index: 2;
-  top: 0%;
-  left: 10%;
+  bottom: 20%;
+  left: 25%;
 }
 
 .saveWaterEndLady {
-  height: 90%;
+  height: 70%;
   position: fixed;
   z-index: 2;
-  top: 10%;
+  bottom: 0%;
   left: 20%;
 }
 

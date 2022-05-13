@@ -99,7 +99,6 @@ function Activity01() {
     }
     useEffect(() => {
         setRightSide(cl1)
-        console.log(rightSide)
     }, [cl1])
     const rightAnswerClicked = () => {
         playSound.unload()
@@ -155,9 +154,9 @@ function Activity01() {
             setClick(true)
         })
     }
-    console.log(rightSide)
+
     const handleAnswer = (value) => {
-        console.log(value)
+
         if (value === cl1) {
             setCorrectHL(true)
             rightAnswerClicked()
@@ -179,18 +178,18 @@ function Activity01() {
             sprites={
                 <div className='activitytype01Screen'>
 
-                    <Image src={activitytype01?.sprites[hW]} alt="" className={`${cl1} ${(enablePointer) ? 'cursorPointer' : ''}`} />
+                    <Image src={activitytype01?.sprites[hW]} alt="" className={`${cl1}`} />
                     {(correctHL) ? <Image src={activitytype01?.sprites[20]} alt="" className={`highlighterAnim ${cl1} `} /> : null}
 
-                    <Image src={activitytype01?.sprites[hNw01]} alt="" className={`${cl2} ${(enablePointer) ? 'cursorPointer' : ''}`}
+                    <Image src={activitytype01?.sprites[hNw01]} alt="" className={`${cl2}`}
                     />
                     {(wrongHL01) ? <Image src={activitytype01?.sprites[21]} alt="" className={`highlighterAnim ${cl2}`} /> : null}
-                    <div className='clickAbleDots clickAbleDotsLeft' onClick={() => { if (click) { handleAnswer("leftHexagonIcon") } }}>
+                    <div className={`${(enablePointer) ? 'cursorPointer' : ''} clickAbleDots clickAbleDotsLeft`} onClick={() => { if (click) { handleAnswer("leftHexagonIcon") } }}>
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
-                    <div className='clickAbleDots clickAbleDotsRight' onClick={() => {
+                    <div className={`${(enablePointer) ? 'cursorPointer' : ''} clickAbleDots clickAbleDotsRight`} onClick={() => {
                         if (click) {
                             handleAnswer('rightHexagonIcon')
                         }
@@ -201,12 +200,12 @@ function Activity01() {
                         <div></div>
                         <div></div>
                     </div>
-                    <div className='clickAbleDots clickAbleDotsCenter' onClick={() => { if (click) { handleAnswer('centerHexagonIcon') } }}>
+                    <div className={`${(enablePointer) ? 'cursorPointer' : ''} clickAbleDots clickAbleDotsCenter`} onClick={() => { if (click) { handleAnswer('centerHexagonIcon') } }}>
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
-                    <Image src={activitytype01?.sprites[hNw02]} alt="" className={`${cl3} ${(enablePointer) ? 'cursorPointer' : ''}`}
+                    <Image src={activitytype01?.sprites[hNw02]} alt="" className={`${cl3}`}
                     />
                     {(wrongHL02) ? <Image src={activitytype01?.sprites[21]} alt="" className={`highlighterAnim ${cl3}`} /> : null}
                     {

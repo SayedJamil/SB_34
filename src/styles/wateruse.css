@@ -1,9 +1,9 @@
 .waterUsesBigIcon {
-  height: 60%;
+  height: 45%;
   position: fixed;
   z-index: 2;
-  top: 5%;
-  left: 10%;
+  top: 25%;
+  left: 20%;
   animation-name: scale-up-center;
   animation-duration: 2.5s;
   animation-timing-function: ease-in;
@@ -13,22 +13,23 @@
   animation-fill-mode: none;
 }
 .waterUsesBigText {
-  height: 30%;
+  height: 20%;
   position: fixed;
   z-index: 2;
-  top: 20%;
-  left: 45%;
+  top: 38%;
+  left: 50%;
 }
 .waterUsesBottom {
   display: flex;
   position: fixed;
   justify-content: space-evenly;
-  width: 100%;
+  width: 80%;
   top: 75%;
-  height: 80%;
+  height: 100%;
+  left: 9.7%;
 }
 .waterUsesSmallIcon {
-  height: 30%;
+  height: 20%;
 }
 
 @keyframes scale-up-center {
